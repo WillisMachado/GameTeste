@@ -1,6 +1,8 @@
+from typing import Any
+
 import pygame
 
-from code.Const import WIN_HEIGHT, WIN_WIDTH
+from code.Const import WIN_HEIGHT, WIN_WIDTH, MENU_OPTION
 from code.menu import Menu
 
 
@@ -12,6 +14,14 @@ class Game:
     def run(self):
         while True:
             menu = Menu(self.window)
-            menu.run()
-            pass
+            menu_return = menu.run()
+
+            if menu_return == MENU_OPTION[0]:
+                pass
+            elif menu_return == MENU_OPTION[2]:
+                pygame.quit()
+                quit()
+            else:
+                pass
+
 
