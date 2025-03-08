@@ -19,7 +19,7 @@ class Menu:
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
-            # DRAW IMAGES
+            # Imagens
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(70, "Stellar Fury", C_ORANGE, ((WIN_WIDTH / 2), 90))
 
@@ -30,18 +30,18 @@ class Menu:
                     self.menu_text(30, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 300 + 40 * i))
             pygame.display.flip()
 
-            # Check for all events
+            # Checar eventos
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()  # Close Window
-                    quit()  # end pygame
+                    pygame.quit()  # Fechar janela
+                    quit()  # finalizar
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # DOWN KEY
+                    if event.key == pygame.K_DOWN:  # botão para baixo
                         if menu_option < len(MENU_OPTION) - 1:
                             menu_option += 1
                         else:
                             menu_option = 0
-                    if event.key == pygame.K_UP:  # UP KEY
+                    if event.key == pygame.K_UP:  # botão para cima
                         if menu_option > 0:
                             menu_option -= 1
                         else:

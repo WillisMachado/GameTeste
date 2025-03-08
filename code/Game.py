@@ -28,11 +28,11 @@ class Game:
             menu = Menu(self.window)
             menu_return = menu.run()
 
-            if menu_return in MENU_OPTION[:3]:  # Se for uma opção de jogo
+            if menu_return in MENU_OPTION[:2]:  # Se for uma opção de jogo
                 self.start_game(menu_return)
-            elif menu_return == MENU_OPTION[3]:  # Exibir pontuações
+            elif menu_return == MENU_OPTION[2]:  # Exibir pontuações
                 Score(self.window).show()
-            elif menu_return == MENU_OPTION[4]:  # Sair
+            elif menu_return == MENU_OPTION[3]:  # Sair
                 self.quit_game()
 
     def quit_game(self):
